@@ -1,5 +1,6 @@
 import { useContext } from "react";
-import { TodoContext, ToDoElement } from "../App";
+import { TodoContext } from "../contexts/todo.context";
+import { ToDoElement } from "../types/todo-element.interface";
 
 function useTodoManipulations() {
   const { setTodoElements, todoElements } = useContext(TodoContext);

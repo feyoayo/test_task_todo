@@ -1,19 +1,8 @@
-import { createContext, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import TodoListItem from "./components/todo-list-item";
 import AddTodo from "./components/add-todo";
-export const TodoContext = createContext<{
-  todoElements: ToDoElement[];
-  setTodoElements: React.Dispatch<React.SetStateAction<ToDoElement[]>>;
-}>({
-  todoElements: [],
-  setTodoElements: () => {},
-});
-
-export interface ToDoElement {
-  id: number;
-  title: string;
-  isCompleted: boolean;
-}
+import { ToDoElement } from "./types/todo-element.interface";
+import { TodoContext } from "./contexts/todo.context";
 
 const LOCAL_STORAGE_KEY = "TODO_ELEMENTS";
 

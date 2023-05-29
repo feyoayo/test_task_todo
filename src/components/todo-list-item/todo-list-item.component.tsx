@@ -1,7 +1,7 @@
 import classNames from "classnames";
 import { useState } from "react";
-import { ToDoElement } from "../../App";
 import { useTodoManipulations } from "../../hooks";
+import { ToDoElement } from "../../types/todo-element.interface";
 import { ShowElement } from "../ui";
 
 interface TodoListItemProps {
