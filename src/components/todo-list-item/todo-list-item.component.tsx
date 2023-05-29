@@ -18,7 +18,7 @@ const TodoListItem = ({ todo }: TodoListItemProps) => {
   };
 
   return (
-    <div className={"flex justify-between w-80"}>
+    <div className={"flex justify-between"}>
       <ShowElement when={!editTodo}>
         <div className={"flex gap-3"}>
           <input
