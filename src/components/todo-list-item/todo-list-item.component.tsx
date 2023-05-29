@@ -18,7 +18,7 @@ const TodoListItem = ({ todo }: TodoListItemProps) => {
   };
 
   return (
-    <div className={"flex justify-between"}>
+    <div className={"border p-2 mb-1"}>
       <ShowElement when={!editTodo}>
         <div className={"flex gap-3"}>
           <input
@@ -27,7 +27,12 @@ const TodoListItem = ({ todo }: TodoListItemProps) => {
             type="checkbox"
           />
           <div>
-            <span className={classNames(todo.isCompleted && "line-through")}>
+            <span
+              className={classNames(
+                todo.isCompleted && "line-through",
+                "break-all"
+              )}
+            >
               {todo.title}
             </span>
           </div>
@@ -41,7 +46,7 @@ const TodoListItem = ({ todo }: TodoListItemProps) => {
         />
       </ShowElement>
 
-      <div>
+      <div className={"flex gap-3 justify-end"}>
         <ShowElement when={!editTodo && !todo.isCompleted}>
           <button
             onClick={() => setEditTodo(true)}

@@ -1,8 +1,10 @@
 import { useContext, useState } from "react";
+import { FilterValueContext } from "../../contexts/filter-value.context";
 import { TodoContext } from "../../contexts/todo.context";
 
 const AddTodo = () => {
   const { setTodoElements } = useContext(TodoContext);
+  const { filterValue, changeValue } = useContext(FilterValueContext);
   const [value, setValue] = useState<string>("");
   const addTodoHandler = () => {
     setTodoElements((prev) =>
@@ -12,6 +14,9 @@ const AddTodo = () => {
         title: value,
       })
     );
+    if (filterValue === "completed") {
+      changeValue("all");
+    }
     setValue("");
   };
   return (
@@ -25,7 +30,9 @@ const AddTodo = () => {
         onChange={(e) => setValue(e.target.value)}
       />
       <button
-        className={"bg-slate-500 w-16 "}
+        className={
+          "bg-slate-500 w-16 disabled:bg-slate-100 disabled:cursor-not-allowed "
+        }
         onClick={addTodoHandler}
         disabled={!value}
       >

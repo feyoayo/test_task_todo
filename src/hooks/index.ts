@@ -1,3 +1,4 @@
 import useTodoManipulations from "./useTodoManipulations";
 
-export { useTodoManipulations };
+import useLocalStorage from "./useLocalStorage";
+export { useTodoManipulations, useLocalStorage };
