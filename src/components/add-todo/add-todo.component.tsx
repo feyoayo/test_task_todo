@@ -6,7 +6,8 @@ const AddTodo = () => {
   const { setTodoElements } = useContext(TodoContext);
   const { filterValue, changeValue } = useContext(FilterValueContext);
   const [value, setValue] = useState<string>("");
-  const addTodoHandler = () => {
+  const addTodoHandler = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
     setTodoElements((prev) =>
       prev.concat({
         id: Math.floor(Math.random() * 100000),
@@ -20,7 +21,8 @@ const AddTodo = () => {
     setValue("");
   };
   return (
-    <div className={"flex w-full"}>
+    // <div className={"flex w-full"}>
+    <form className={"flex w-full"} onSubmit={(e) => addTodoHandler(e)}>
       <input
         className={
           "outline-none flex grow border-slate-500 border-dashed border"
@@ -33,12 +35,13 @@ const AddTodo = () => {
         className={
           "bg-slate-500 w-16 disabled:bg-slate-100 disabled:cursor-not-allowed "
         }
-        onClick={addTodoHandler}
+        type="submit"
         disabled={!value}
       >
         Add
       </button>
-    </div>
+    </form>
+    // </div>
   );
 };
 
