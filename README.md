@@ -1,5 +1,5 @@
 ## Live preview
-Open [https://test-todo-d3055.web.app/](link) to get live preview
+Open [https://test-todo-d3055.web.app/](link](https://test-todo-d3055.web.app/) to get live preview
 
 ## Before start
 Before start please run
