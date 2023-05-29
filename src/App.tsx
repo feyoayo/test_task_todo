@@ -35,11 +35,14 @@ function App() {
   }, [filterValue, todoElements]);
 
   return (
-    <div className={"flex justify-center items-center flex-col grow h-[100vh]"}>
+    <div
+      className={"flex  justify-center items-center flex-col grow h-[100vh]"}
+    >
       <TodoContext.Provider
         value={{ todoElements: filteredElements, setTodoElements }}
       >
-        <div className={"w-80"}>
+        <h1 className={"text-xl"}>Todo List</h1>
+        <div className={"min-w-80 md:w-1/2 border rounded-lg px-4 py-2"}>
           <FilterValueContext.Provider
             value={{ filterValue, changeValue: setFilterValue }}
           >

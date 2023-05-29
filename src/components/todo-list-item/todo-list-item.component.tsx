@@ -18,7 +18,7 @@ const TodoListItem = ({ todo }: TodoListItemProps) => {
   };
 
   return (
-    <div className={"border p-2 mb-1"}>
+    <div className={"border rounded-lg p-2 mb-1"}>
       <ShowElement when={!editTodo}>
         <div className={"flex gap-3"}>
           <input
